@@ -18,14 +18,33 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['SQLALCHEMY_DATABASE_URI'] =\
     'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+#app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+#app.config['MAIL_SERVER'] = 'smtp.live.com'
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+
+'''
+sender gmail address
+'''
+#app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_USERNAME'] = raw_input('MAIL_USERNAME: ')
+
+'''
+sender email login password
+'''
+#app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_PASSWORD'] = raw_input('MAIL_PASSWORD: ')
+
 app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '[Flasky]'
 app.config['FLASKY_MAIL_SENDER'] = 'Flasky Admin <flasky@example.com>'
-app.config['FLASKY_ADMIN'] = os.environ.get('FLASKY_ADMIN')
+
+
+'''
+receiver email address
+'''
+#app.config['FLASKY_ADMIN'] = os.environ.get('FLASKY_ADMIN')
+app.config['FLASKY_ADMIN'] = raw_input('FLASKY_ADMIN: ')
 
 manager = Manager(app)
 bootstrap = Bootstrap(app)
