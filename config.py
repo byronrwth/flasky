@@ -12,15 +12,15 @@ class Config:
     MAIL_USE_TLS = True
     #MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_USERNAME = raw_input('MAIL_USERNAME: ')
-    #MAIL_USERNAME = "byroneagle@hotmail.com"
+
     #MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     MAIL_PASSWORD = raw_input('MAIL_PASSWORD: ')
-    #MAIL_PASSWORD = "flyeagle1982A"
+
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
     FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
     #FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
     FLASKY_ADMIN = raw_input('FLASKY_ADMIN: ')
-    #FLASKY_ADMIN = "byroneagle@gmail.com"
+    
 
     @staticmethod
     def init_app(app):
